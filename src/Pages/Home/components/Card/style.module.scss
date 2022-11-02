@@ -1,0 +1,44 @@
+@import '../../../../styles/variables.scss';
+.img {
+	svg {
+		width: 48px;
+		height: 48px;
+	}
+	margin-bottom: 12px;
+}
+.card {
+	display: flex;
+	flex-direction: column;
+	background: var(#{--card-background-default});
+	border-radius: 10px;
+	padding: 10px;
+	width: 149px;
+	transition: 0.3s;
+	cursor: pointer;
+	.day {
+		margin-bottom: 7px;
+		font-size: 18px;
+		color: var(#{--text-color-default});
+	}
+	.day_info {
+		font-size: 14px;
+		margin-bottom: 12px;
+		color: $date-position-color;
+	}
+	.day_temp {
+		font-size: 18px;
+		color: var(#{--text-color-default});
+	}
+	.day_temp_night {
+		font-size: 13px;
+		color: $date-position-color;
+		margin-bottom: 6px;
+	}
+	.info {
+		font-size: 13px;
+		color: $date-position-color;
+	}
+	&:hover {
+		box-shadow: var(#{--card-box-shadow-default});
+	}
+}

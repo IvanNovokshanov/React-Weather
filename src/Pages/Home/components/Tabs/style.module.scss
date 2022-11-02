@@ -1,0 +1,32 @@
+@import '../../../../styles/variables.scss';
+.tabs {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 7px;
+}
+.cancel,
+.tab {
+	box-shadow: $box-shadow;
+	border-radius: 5px;
+	padding: 9px 20px;
+	background-color: var(#{--components-background-default});
+	margin-right: 15px;
+	color: var(#{--text-color-default});
+	font-size: 18px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+.cancel {
+	margin-right: 0;
+}
+.wrapper {
+	display: flex;
+}
+.tab {
+	&.active {
+		background: $primary-color;
+		color: #fff;
+	}
+}
