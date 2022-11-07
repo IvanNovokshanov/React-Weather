@@ -11,7 +11,6 @@ type CurrentWeather = {
 
 type Response = {
 	status: number;
-	// massage: string;
 };
 const initialState: CurrentWeather = {
 	daysWeather: [
@@ -47,7 +46,6 @@ export const currentWeather7daysSlice = createSlice({
 			state.daysWeather = action.payload.data;
 			state.response = {
 				status: action.payload.status
-				// message: action.payload.statusText
 			};
 		},
 		fetchCurrentWeatherError(
@@ -57,7 +55,6 @@ export const currentWeather7daysSlice = createSlice({
 			state.isLoading = false;
 			state.response = {
 				status: action.payload.status
-				// message: action.payload.statusText
 			};
 		},
 		currentTown(state, action) {

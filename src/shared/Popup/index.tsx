@@ -12,7 +12,6 @@ interface IPopupProps {
 }
 
 export const Popup: FC<IPopupProps> = ({ closePopup, dataPopup }) => {
-	console.log('IVANNNN', dataPopup.weather[0].main);
 	const dataPrecipitation = dataPopup.weather[0].main;
 
 	const items = [

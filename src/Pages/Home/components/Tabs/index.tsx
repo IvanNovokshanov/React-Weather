@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './style.module.scss';
+import style from './style.module.scss';
 
 interface Props {}
 export interface Tabs {
@@ -14,18 +14,22 @@ export const Tabs = (props: Props) => {
 		{ value: 'На месяц', target: false }
 	];
 	return (
-		<div className={s.tabs}>
-			<div className={s.wrapper}>
+		<div className={style.tabs}>
+			<div className={style.wrapper}>
 				{tabs.map((tab: Tabs) => (
 					<div
-						className={tab.target ? s.tab + ' ' + s.active : s.tab}
+						className={
+							tab.target
+								? style.tab + ' ' + style.active
+								: style.tab
+						}
 						key={tab.value}
 					>
 						{tab.value}
 					</div>
 				))}
 			</div>
-			<div className={s.cancel}>Отменить</div>
+			<div className={style.cancel}>Отменить</div>
 		</div>
 	);
 };

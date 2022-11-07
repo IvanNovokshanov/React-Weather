@@ -11,10 +11,10 @@ type CurrentWeather = {
 
 type Response = {
 	status: number;
-	// massage: string;
 };
 const initialState: CurrentWeather = {
 	weather: {
+		dt_txt: '',
 		main: {
 			temp: 0,
 			feels_like: 0,
@@ -34,7 +34,6 @@ const initialState: CurrentWeather = {
 	isLoading: false,
 	response: {
 		status: 0
-		// message: ''
 	},
 	town: 'Москва'
 };
@@ -54,7 +53,6 @@ export const currentWeatherSlice = createSlice({
 			state.weather = action.payload.data;
 			state.response = {
 				status: action.payload.status
-				// message: action.payload.statusText
 			};
 		},
 		fetchCurrentWeatherError(
@@ -64,7 +62,6 @@ export const currentWeatherSlice = createSlice({
 			state.isLoading = false;
 			state.response = {
 				status: action.payload.status
-				// message: action.payload.statusText
 			};
 		},
 		currentTown(state, action) {
@@ -72,8 +69,5 @@ export const currentWeatherSlice = createSlice({
 		}
 	}
 });
-
-// export const currentTown = currentWeatherSlice.actions;
-// console.log('!!!!!!!!!!!!!!!!!', currentWeatherSlice.actions.currentTown);
 
 export default currentWeatherSlice.reducer;

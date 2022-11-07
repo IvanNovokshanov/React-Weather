@@ -22,28 +22,6 @@ export const fetchCurrentWeather =
 			console.log(error);
 		}
 	};
-// export const fetchCurrentWeather7days =
-// 	(payload: string) => async (dispatch: AppDispatch) => {
-// 		try {
-// 			dispatch(currentWeather7daysSlice.actions.fetchCurrentWeather());
-// 			const res = await weatherService7days(payload);
-// 			if (res.status === 200) {
-// 				dispatch(
-// 					currentWeather7daysSlice.actions.fetchCurrentWeatherSuccess(
-// 						res
-// 					)
-// 				);
-// 			} else {
-// 				dispatch(
-// 					currentWeather7daysSlice.actions.fetchCurrentWeatherError(
-// 						res
-// 					)
-// 				);
-// 			}
-// 		} catch (error) {
-// 			console.log(error);
-// 		}
-// 	};
 
 export const fetchCurrentWeather7days =
 	(payload: string) => async (dispatch: AppDispatch) => {

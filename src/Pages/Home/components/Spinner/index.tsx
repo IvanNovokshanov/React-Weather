@@ -15,7 +15,6 @@ export const Spinner = () => {
 	const { isLoading } = useCustomSelector(
 		state => state.currentWeatherSliceReducer
 	);
-	console.log('PROVERKA', isLoading);
 	let [loading, setLoading] = useState(true);
 	useEffect(() => {
 		setLoading(isLoading);

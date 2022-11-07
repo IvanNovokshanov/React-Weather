@@ -10,7 +10,6 @@ import { currentWeatherSlice } from '../../store/slices/currentWeatherSlice';
 interface Props {}
 
 export const Header = (props: Props) => {
-	// const [theme, setTheme] = useState('light');
 	const dispatch = useCustomDispatch();
 	const theme = useTheme();
 	const options = [
@@ -19,7 +18,6 @@ export const Header = (props: Props) => {
 		{ value: 'batumi', label: 'Батуми' }
 	];
 	const lookTown = (town: string | undefined) => {
-		console.log(town);
 		dispatch(currentWeatherSlice.actions.currentTown(town));
 	};
 

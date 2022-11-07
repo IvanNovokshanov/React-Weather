@@ -9,7 +9,6 @@ interface Props {
 }
 
 export const ThisDay = ({ weather }: Props) => {
-	console.log('!!!!', weather);
 	const date = new Date();
 	const { town } = useCustomSelector(
 		state => state.currentWeatherSliceReducer
