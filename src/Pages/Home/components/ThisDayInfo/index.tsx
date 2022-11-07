@@ -4,6 +4,7 @@ import cloud from '../../../../assets/images/cloud.png';
 import { ThisDayItem } from '../ThisDayItem';
 import { Weather } from '../../../../store/types/types';
 import { idText } from 'typescript';
+import { precipitationTranslator } from '../../../../assets/translator/LanguageTranslator';
 
 interface Props {
 	weather: Weather;
@@ -15,21 +16,7 @@ export interface Item {
 }
 
 export const ThisDayInfo = ({ weather }: Props) => {
-	const precipitation = () => {
-		const data = weather.weather[0].main;
-		if (data === 'Rain') {
-			return 'Дождь';
-		}
-		if (data === 'Clouds') {
-			return 'Без осадков';
-		}
-		if (data === 'Clear') {
-			return 'Без осадков';
-		}
-		if (data === 'Snow') {
-			return 'Снег';
-		}
-	};
+	const data = weather.weather[0].main;
 	const items = [
 		{
 			icon_id: 'temp',
@@ -47,13 +34,15 @@ export const ThisDayInfo = ({ weather }: Props) => {
 			icon_id: 'precipitation',
 			name: 'Осадки',
 			value: `${
-				precipitation() === undefined ? 'загрузка' : precipitation()
+				precipitationTranslator(data) === null
+					? 'загрузка'
+					: precipitationTranslator(data)
 			}`
 		},
 		{
 			icon_id: 'wind',
 			name: 'Ветер',
-			value: `${`${Math.floor(weather.wind.speed)}`} м/с`
+			value: `${Math.floor(weather.wind.speed)} м/с`
 		}
 	];
 	return (

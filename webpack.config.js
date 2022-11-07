@@ -10,8 +10,6 @@ const dotenv = require('dotenv').config({
 
 module.exports = {
 	entry: './src/index.tsx',
-	// entry: [__dirname + '/src/index.tsx', __dirname + '/src/styles/index.scss'],
-
 	output: {
 		path: path.resolve(__dirname, './dist'),
 		filename: '[name].bundle.js',
@@ -23,7 +21,6 @@ module.exports = {
 	devServer: {
 		historyApiFallback: true,
 		static: path.resolve(__dirname, './public'),
-		// open: true, открывает каждый раз при запуске дев сервера новое окно в браузере
 		compress: true,
 		hot: true,
 		port: 8080
@@ -51,30 +48,13 @@ module.exports = {
 				],
 				exclude: /node_modules/
 			},
-			// {
-			// 	test: /\.css$/,
-			// 	use: [MiniCssExtractPlugin.loader, 'css-loader']
-			// },
-
 			{
 				test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
 				type: 'asset/resource'
 			}
-			// {
-			// 	test: /\.scss$/,
-			// 	exclude: /node_modules/,
-			// 	use: [
-			// 		{
-			// 			loader: 'file-loader',
-			// 			options: { outputPath: 'css/', name: '[name].min.css' }
-			// 		},
-			// 		'sass-loader'
-			// 	]
-			// }
 		]
 	},
 	resolve: {
-		// modules: [path.resolve(__dirname, './src'), 'node_modules'],
 		modules: ['node_modules'],
 		extensions: ['.js', '.tsx', '.ts', '.css', '.json'],
 		alias: {
@@ -108,10 +88,5 @@ module.exports = {
 		new webpack.DefinePlugin({
 			'process.env': dotenv.parsed
 		})
-		// new webpack.DefinePlugin({
-		// 	'process.env.NODE_ENV': JSON.stringify(
-		// 		process.env.NODE_ENV || 'development'
-		// 	)
-		// })
 	]
 };

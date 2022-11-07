@@ -55,3 +55,18 @@ export const dayTranslator = (id: any) => {
 			return null;
 	}
 };
+
+export const precipitationTranslator = (id: any) => {
+	switch (id) {
+		case 'Rain':
+			return 'Дождь';
+		case 'Clouds':
+			return 'Без осадков';
+		case 'Clear':
+			return 'Без осадков';
+		case 'Snow':
+			return 'Снег';
+		default:
+			return null;
+	}
+};

@@ -1,16 +1,16 @@
 import React, { useState, FC } from 'react';
 import style from './style.module.scss';
 import { GlobalSvgSelector } from '../../../../assets/icons/global/GlobalSvgSelector';
-import { List } from '../../../../store/types/types';
+import { List, Weather } from '../../../../store/types/types';
 import {
 	monthTranslator,
 	dayTranslator
 } from '../../../../assets/translator/LanguageTranslator';
 
 interface ICardProps {
-	day: List;
-	night: List;
-	onClickCard: (day: List) => void;
+	day: Weather;
+	night: Weather;
+	onClickCard: (day: Weather) => void;
 }
 
 export const Card: FC<ICardProps> = ({ day, night, onClickCard }) => {
@@ -41,22 +41,3 @@ export const Card: FC<ICardProps> = ({ day, night, onClickCard }) => {
 		</>
 	);
 };
-
-// interface Props {
-// 	day: List;
-// }
-
-// export const Card = ({ day }: Props) => {
-// 	return (
-// 		<div className={style.card}>
-// 			<div className={style.day}>{day.day}</div>
-// 			<div className={style.day_info}>{day.day_info}</div>
-// 			<div className={style.img}>
-// 				<GlobalSvgSelector id={day.icon_id} />
-// 			</div>
-// 			<div className={style.day_temp}>{day.temp_day}</div>
-// 			<div className={style.day_temp_night}>{day.temp_night}</div>
-// 			<div className={style.info}>{day.info}</div>
-// 		</div>
-// 	);
-// };

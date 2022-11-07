@@ -1,4 +1,6 @@
 export type Weather = {
+	dt_txt: string;
+
 	main: {
 		temp: number;
 		feels_like: number;
@@ -15,21 +17,6 @@ export type Weather = {
 		}
 	];
 };
-// export type Weather7days = {
-// 	list: [];
-// 	city: {
-// 		name: string;
-// 	};
-// wind: {
-// 	speed: number;
-// };
-// weather: [
-// 	{
-// 		main: string;
-// 		description: string;
-// 	}
-// ];
-// };
 export type Weather5 = {
 	main: string;
 	description: string;
