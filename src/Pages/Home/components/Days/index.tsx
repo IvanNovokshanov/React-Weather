@@ -23,7 +23,6 @@ export const Days = ({ daysWeather }: Weather5days) => {
 	};
 
 	const closePopup = () => {
-		console.log('!!!!');
 		setIsShow(false);
 	};
 	return (

@@ -14,20 +14,6 @@ export const ThisDay = ({ weather }: Props) => {
 		state => state.currentWeatherSliceReducer
 	);
 	const data = weather.weather[0].main;
-	const imageSelector = () => {
-		if (data === 'Rain') {
-			return 'rain';
-		}
-		if (data === 'Clouds') {
-			return 'mainly_cloudy';
-		}
-		if (data === 'Clear') {
-			return 'sun';
-		}
-		if (data === 'Snow') {
-			return 'snow';
-		}
-	};
 	return (
 		<div className={s.this_day}>
 			<div className={s.top_block}>
@@ -37,7 +23,6 @@ export const ThisDay = ({ weather }: Props) => {
 					</div>
 					<div className={s.this_day_name}>Сегодня</div>
 				</div>
-				{/* <GlobalSvgSelector id="sun" /> */}
 				<GlobalSvgSelector id={data} />
 			</div>
 			<div className={s.bottom_block}>
